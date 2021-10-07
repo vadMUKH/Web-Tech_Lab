@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Мухамедьяров В.А.</title> 
+	<link rel="stylesheet" href="jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+	<script src="jquery-ui.js"></script>
+</head>
+<body>
+<h1>Вариант 7</h1>
+<h2>Список авиабилетов из Уфы. Куда хотите полететь?</h2>
+<img src="https://avatars.mds.yandex.net/get-zen_doc/3683658/pub_6038aa2dd4391d5d923778f5_6038aa4fd4391d5d9237bc08/scale_1200" alt="" width="300px">	<img src="https://otpusk-piter.ru/wp-content/uploads/2016/06/rechnoy-karnaval-SPb.jpg" alt="" width="300px">
+<img src="https://img-cdn.tinkoffjournal.ru/i/QySq1ZGBeNDZbLAqt6oS5CO267tRPx2zCo6K-kTZ0Yo/w:1200/aHR0cHM6Ly9pbWct/Y2RuLnRpbmtvZmZq/b3VybmFsLnJ1Ly0v/bWFpbl9fX3NodXR0/ZXJzdG9ja180Mzg4/NDMwOTcuOHRqNTlu/NmpnZnYwLmpwZw" alt="" width="300px">	<img src="https://tripplanet.ru/wp-content/uploads/europe/russia/cheboksary/cheboksary-dostoprimechatelnosti.jpg" alt="" width="300px">	
+<span id="accordion" >
+	<h2>Москва</h2> <div style="height: 600px;">
+	  <h3>Москва</h3>			
+Москва - столица России. Невероятно красивый, большой, динамичный город-контраст! Тут вы найдете и старинную архитектуру, и новейшие небоскребы. <br><br> Столицу должен увидеть каждый! Не упустите свой шанс.		
+<br>
+</div>
+	<h2>Санкт-Петербург</h2> 
+	<div style="height: 600px;">
+	  <h3>Санкт-Петербург</h3>   				
+Город, который влюбяет! Стоит приехать сюда один раз и вам захочется остаться тут еще на день-другой, а то и на всю жизнь!	<br><br>Настоящий город-музей, который никого не оставит равнодушным...	<br><br>
+<br>
+	</div> 
+  <h2>Казань</h2> 
+	<div style="height: 600px;">
+	  <h3>Казань</h3>   				
+Столица республики Татарстан.<br><br>
+Пешеходные улицы, отличные бары и калорит местной культуры!
+	</div> 
+  <h2>Чебоксары</h2> 
+	<div style="height: 600px;">
+	  <h3>Чебоксары</h3>   				
+Приволжский городок с духом морского города<br><br>
+Здесь вы найдете удивительные пешеходные парки, уют глубинки и виды великой реки!
+	</div> 
+	</span>
+  <br>
+<input type="button" value="Купить билет!" id="buy" style="background-color: white;">
+
+	<div id="dialog" title="Купить билет!">
+        <h3>Данные для билета:</h3>
+        <form>
+          Фамилия: <input type="text"><br><br>
+		 Имя: <input type="text"><br><br>
+     Отчество: <input type="text"><br><br>
+     Дата рождения:  <input type="text"  class="date"><br><br>
+    Город прилета: <input type="text"  class="city"><br><br>
+		Количество багажа (кг): <p style="display: inline;" id="sliderValue"></p>
+    <br><br>
+    <div class="slider" style="width: 100%;"></div> <br>
+    Промо-код: <input type="text" title="Участвуйте в конкурсе от авиакомпании!"><br><br>
+          <label>Стоимость: </label><span id="stoim"></span> руб  <span style="font-weight: 900; font-size: large;" title="Расчет производится в зависимости от уровня трудолюбивости">&#63;</span><br><br>
+        </form>
+        <input type="button" class="kup" value="Купить">
+      </div>
+	  <div class="pp" title="Подтверждение">Пожалуйста, подтвердите действие: Вы действительно хотите приобрести билет?</div>
+	  <div class="da" title="Подтверждено">Спасибо!</div>
+<script type="text/javascript">
+    $(function(){
+		$("#accordion" ).accordion({  collapsible: true });
+		$('#dialog').dialog({ autoOpen: false, width: 500 });
+		  $.datepicker.regional['ru'] = {
+	closeText: 'Закрыть',
+	prevText: 'Предыдущий',
+	nextText: 'Следующий',
+	currentText: 'Сегодня',
+	monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+	monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+	dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+	dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+	dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+	weekHeader: 'Не',
+	dateFormat: 'dd.mm.yy',
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ''
+};
+	$.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+		  $(".date").datepicker({ });
+		$("#buy").click(function(){ 
+        $( "#dialog" ).dialog('open'); 
+      })
+	  var city = ["Москва", "Санкт-Петербург", "Казань", "Чебоксары"]; 
+	  $(".city" ).click(function(){
+		$(".city").autocomplete({ source: city });  
+	}); 
+	$('.slider').slider({
+		    min: 0,
+	    	max: 30,
+        change: function (event, ui){
+            var val = $('.slider').slider('value');
+            $('#sliderValue').html(val);
+            var k = $('#sliderValue').html();
+            var stoim = 2500*(1+k/10);
+            document.getElementById('stoim').innerHTML = Math.floor(stoim);
+        }
+    });
+  $( function() {
+    $( document ).tooltip();
+  } );
+  $(".kup" ).click(function(){
+		$('.pp').dialog('open'); })
+	$('.pp').dialog({ autoOpen: false, width: 300, buttons:{
+        "Да!": function(){ $( ".da" ).dialog('open'),$('.pp').dialog('close'), 	$('#dialog').dialog('close');   },
+        "Нет": function(){$('.pp').dialog('close'), 	$('#dialog').dialog('close'); }
+    }})
+	$( ".da" ).dialog({autoOpen: false, width: 300}); 
+	})
+
+	</script>
+</body>
+</html>

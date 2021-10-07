@@ -10,11 +10,11 @@
     <h2>студента гр. ПИ-320 Мухамедьярова В.А.</h2>
     
     <ul>
-        <li><a href = "WWW/Muhamedyarov/LR1/lab1.html">Лабораторная работа №1</a></li>
-        <li><a href = "WWW/Muhamedyarov/LR2/Lab2.html">Лабораторная работа №2</a></li>
-        <li><a href = "WWW/Muhamedyarov/LR3/lab3.html">Лабораторная работа №3</a></li>
-        <li><a href = "WWW/Muhamedyarov/LR4/lab4_1.html">Лабораторная работа №4</a></li>
-        <li><a href = "WWW/Muhamedyarov/LR5/lab5.html">Лабораторная работа №5</a></li>
+        <li><a href = "LR1/lab1.html">Лабораторная работа №1</a></li>
+        <li><a href = "LR2/Lab2.html">Лабораторная работа №2</a></li>
+        <li><a href = "LR3/lab3.html">Лабораторная работа №3</a></li>
+        <li><a href = "LR4/lab4_1.html">Лабораторная работа №4</a></li>
+        <li><a href = "LR5/lab5.html">Лабораторная работа №5</a></li>
     </ul>
 </body>
 </html>
